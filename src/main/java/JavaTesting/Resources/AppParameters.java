@@ -16,7 +16,7 @@ public class AppParameters {
         //Codi per reconfigurar l'app
     }
 
-    public AppParameters getInstance () {
+    public static AppParameters getInstance () {
         if (instance == null) {
             instance = new AppParameters();
         }

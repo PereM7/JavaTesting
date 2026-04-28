@@ -4,6 +4,7 @@ import JavaTesting.Resources.AppParameters;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AppParameterTest {
     public static final String DOMAIN_ESPERAT = "127.0.0.1";
@@ -25,4 +26,11 @@ public class AppParameterTest {
         assertEquals(URL_ESPERAT, AppParameters.deployedURL(), "Retorna la URL de froma correcte ");
     }
 
+    @Test
+    public void singletonCorrectness() {
+        AppParameters instancia1 = AppParameters.getInstance();
+        AppParameters instancia2 = AppParameters.getInstance();
+
+        assertTrue((instancia1 == instancia2), "Comprovació unicitat instancia del singleton");
+    }
 }
