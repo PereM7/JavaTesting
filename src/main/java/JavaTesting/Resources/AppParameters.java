@@ -5,9 +5,9 @@ public class AppParameters {
     public static final String PORT = "80";
 
     //SINGLETON PATTERN
-    private static AppParameters instance;
+    private static AppParameters instance = new AppParameters();
 
-    public void AppParameters () {}
+    private void AppParameters () {}
 
     private void initApp() {
         //Codi necessari per iniciar l'app
@@ -17,9 +17,9 @@ public class AppParameters {
     }
 
     public static AppParameters getInstance () {
-        if (instance == null) {
-            instance = new AppParameters();
-        }
+        //if (instance == null) {
+          //  instance = new AppParameters();
+        //}
         return instance;
     }
 
