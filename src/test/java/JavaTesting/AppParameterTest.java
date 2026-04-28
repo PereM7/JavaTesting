@@ -29,7 +29,7 @@ public class AppParameterTest {
     @Test
     public void singletonCorrectness() {
         AppParameters instancia1 = AppParameters.getInstance();
-        AppParameters instancia2 = AppParameters.getInstance();
+        AppParameters instancia2 = new AppParameters();
 
         assertTrue((instancia1 == instancia2), "Comprovació unicitat instancia del singleton");
     }

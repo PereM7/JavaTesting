@@ -7,7 +7,7 @@ public class AppParameters {
     //SINGLETON PATTERN
     private static AppParameters instance;
 
-    private void AppParameters () {}
+    public void AppParameters () {}
 
     private void initApp() {
         //Codi necessari per iniciar l'app
