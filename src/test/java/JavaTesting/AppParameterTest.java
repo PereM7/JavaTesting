@@ -6,11 +6,23 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppParameterTest {
-    public static final String DOMAIN_ESPERAT = "10.0.0.43";
+    public static final String DOMAIN_ESPERAT = "127.0.0.1";
     public static final String PORT_ESPERAT = "80";
+    public static final String URL_ESPERAT = "https://" + DOMAIN_ESPERAT + ":" + PORT_ESPERAT;
 
     @Test
     public void domainURLCorrecte() {
         assertEquals(DOMAIN_ESPERAT, AppParameters.DOMAIN, "Retorna la part FQDN");
     }
+
+    @Test
+    public void correctPORT() {
+        assertEquals(PORT_ESPERAT, AppParameters.PORT, "Retorna el PORT de froma correcte ");
+    }
+
+    @Test
+    public void correctURL() {
+        assertEquals(URL_ESPERAT, AppParameters.deployedURL(), "Retorna la URL de froma correcte ");
+    }
+
 }
