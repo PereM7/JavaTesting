@@ -27,3 +27,4 @@ public class AppParameters {
         return "https://" + DOMAIN + ":" + PORT;
     }
 }
+
