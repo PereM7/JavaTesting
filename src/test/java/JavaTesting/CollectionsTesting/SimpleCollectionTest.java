@@ -23,7 +23,7 @@ public class SimpleCollectionTest {
         assertTrue(numerals.size() == 4);
 
         numerals.add("quatre");
-        assertTrue(numerals.size() == 4);
+        assertTrue(numerals.size() == 5);
 
 
         List<String> llistaNum = Arrays.asList(nombres);
@@ -32,5 +32,23 @@ public class SimpleCollectionTest {
         //llistaNum.add("quatre");
 
 
+    }
+
+    @Test
+    public void diesSetmana() {
+        List<String> diesSetmana = new ArrayList<>();
+        List<String> diesFeiners = new ArrayList<>();
+        List<String> diesFinde = new ArrayList<>();
+
+        initDiesFeiners(diesFeiners);
+        assertTrue(diesFeiners.size() == 5);
+    }
+
+    public void initDiesFeiners (List<String> dies) {
+        dies.add("dilluns");
+        dies.add("dimarts");
+        dies.add("dimecres");
+        dies.add("dijous");
+        dies.add("divendres");
     }
 }
