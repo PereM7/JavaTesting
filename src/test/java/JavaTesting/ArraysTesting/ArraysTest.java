@@ -43,4 +43,28 @@ public class ArraysTest {
             assertTrue(nums[i] == -1);
         }
     }
+
+    @Test
+    public void copiaRangMatriu() {
+        String[] dies = {"dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte", "diumenge"};
+
+        String[] feiners = Arrays.copyOfRange(dies, 0, 5);
+
+        assertTrue(feiners.length == 5);
+        assertTrue(feiners[1].equals("dimarts"));
+
+        String[] feinersEsclaus = Arrays.copyOfRange(feiners, 0, 7);
+
+        assertTrue(feinersEsclaus[0].equals("dilluns"));
+        //assertEquals(feiners[5], null);
+        assertEquals(feinersEsclaus[5], null);
+        assertEquals(feinersEsclaus[6], null);
+
+        feinersEsclaus[5] = "dissabteFeina";
+        feinersEsclaus[6] = "diaDescans";
+
+        assertTrue(feinersEsclaus[6].equals("diaDescans"));
+
+
+    }
 }
