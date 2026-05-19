@@ -105,4 +105,29 @@ public class ExeptionsTest {
         });
 
     }
+
+    @Test
+    public void jugantObjectesExceptionTest () {
+        Integer edat = null;
+        String edatEnLletres = "";
+        String text = "";
+
+        try{
+            edatEnLletres = edat.toString();
+        }
+        catch (NullPointerException npe) {
+            edat = 18;
+            edatEnLletres = edat.toString();
+
+
+            System.out.println(npe.getMessage());
+            System.out.println(npe.getStackTrace());
+            npe.printStackTrace();
+        }
+        finally {
+            text = "Edat == " + edatEnLletres;
+        }
+
+        assertEquals("Edat == "+18, text);
+    }
 }
