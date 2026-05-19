@@ -11,5 +11,12 @@ public class ArraysTest {
         String[] numerals = {"zero", "un", "dos", "tres"};
 
         assertEquals("zero", numerals[0]);
+
+        String nombres = "";
+        for (String n: numerals) {
+            nombres += n + "|";
+        }
+
+        assertEquals(nombres, "zero|un|dos|tres|");
     }
 }
