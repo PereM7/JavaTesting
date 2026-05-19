@@ -1,5 +1,7 @@
 package DomainEntities;
 
+import JavaTesting.Resources.PasswordUtils;
+
 public class User {
     private String name;
     private String password;
@@ -13,6 +15,7 @@ public class User {
     public User (String name, String pass){
         this.name = name;
         this.password = pass;
+        this.salt = PasswordUtils.generarSalt();
     }
 
 
