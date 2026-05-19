@@ -3,6 +3,7 @@ package JavaTesting.CollectionsTesting;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -20,6 +21,15 @@ public class SimpleCollectionTest {
         }
 
         assertTrue(numerals.size() == 4);
+
+        numerals.add("quatre");
+        assertTrue(numerals.size() == 4);
+
+
+        List<String> llistaNum = Arrays.asList(nombres);
+        assertTrue(llistaNum.size() == 4);
+
+        //llistaNum.add("quatre");
 
 
     }
