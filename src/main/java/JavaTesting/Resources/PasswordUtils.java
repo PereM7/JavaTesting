@@ -31,7 +31,7 @@ public class PasswordUtils {
 
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(password.getBytes());
+            md.update( (salt + password).getBytes());
             resultat = (md.digest()).toString();
         }
         catch (NoSuchAlgorithmException nsae) {

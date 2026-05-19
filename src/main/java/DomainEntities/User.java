@@ -14,7 +14,7 @@ public class User {
     }
     public User (String name, String pass){
         this.name = name;
-        this.password = pass;
+        setPassword(pass);
         this.salt = PasswordUtils.generarSalt();
     }
 
@@ -26,10 +26,12 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword () {
-        return this.password;
+    public boolean verificarPassword (String passwordEntrada) {
+        return PasswordUtils.verifyUserPassword(passwordEntrada, salt, password);
     }
     public void setPassword (String pass) {
-        this.password = pass;
+        this.password = PasswordUtils.hashedPassword(pass, salt);
     }
+
+
 }
