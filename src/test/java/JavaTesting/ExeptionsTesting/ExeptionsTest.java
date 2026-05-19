@@ -82,5 +82,27 @@ public class ExeptionsTest {
 
     }
 
+    @Test
+    public void excepcioErronia () {
 
+        assertThrows(NullPointerException.class, () -> {
+            Integer edat = null;
+            String edatEnLletres = "";
+            String text = "";
+
+            try{
+                System.out.println("Passa 1- Generar NullPointerException");
+                //edatEnLletres = edat.toString();
+                throw new IllegalArgumentException("exepció llançada per mi.");
+
+            }
+            catch (IllegalArgumentException iae) {
+                System.out.println("Passa 2- Capturam la NullPointException");
+            }
+            finally {
+                System.out.println("Passa final - Codi de tancament.");
+            }
+        });
+
+    }
 }
