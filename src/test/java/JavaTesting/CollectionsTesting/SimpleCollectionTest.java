@@ -2,9 +2,7 @@ package JavaTesting.CollectionsTesting;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -82,6 +80,30 @@ public class SimpleCollectionTest {
         calculDies.addAll(diesSetmana);
         calculDies.removeAll(diesFinde);
         assertEquals(5, calculDies.size());
+
+
+    }
+
+    @Test
+    public void provesAmbMapTest () {
+        Map<String, String> map = new HashMap<>();
+
+        map.put("fons", "negre");
+        map.put("menus", "blau");
+        map.put("dialeg", "verd");
+
+        assertEquals(map.size(), 3);
+
+        assertTrue(map.containsKey("menus"));
+        assertTrue(map.containsValue("blau"));
+
+        map.remove("dialeg");
+        assertEquals(2, map.size());
+
+        map.remove("inexistent");
+        assertEquals(2, map.size());
+
+        assertEquals(map.get("fons"), "negre");
 
 
     }
