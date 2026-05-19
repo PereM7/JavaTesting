@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SimpleCollectionTest {
 
@@ -42,6 +42,18 @@ public class SimpleCollectionTest {
 
         initDiesFeiners(diesFeiners);
         assertTrue(diesFeiners.size() == 5);
+
+        assertEquals(0, diesSetmana.size());
+        assertFalse(diesSetmana.containsAll(diesFeiners));
+
+        diesSetmana.addAll(diesFeiners);
+        assertTrue(diesSetmana.containsAll(diesFeiners));
+
+        diesFinde.add("dissabte");
+        diesFinde.add("diumenge");
+
+        diesSetmana.addAll(diesFinde);
+        assertTrue(diesSetmana.containsAll(diesFeiners));
     }
 
     public void initDiesFeiners (List<String> dies) {
