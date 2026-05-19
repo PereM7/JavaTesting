@@ -108,6 +108,19 @@ public class SimpleCollectionTest {
 
     }
 
+    @Test
+    public void provesSetTest () {
+        Set<String> dies = new HashSet<>();
+
+        dies.add("dilluns");
+        dies.add("dilluns");
+        dies.add("dilluns");
+
+        assertEquals(dies.size(), 1);
+
+
+    }
+
     public void initDiesFeiners (List<String> dies) {
         dies.add("dilluns");
         dies.add("dimarts");
