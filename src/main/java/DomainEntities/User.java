@@ -14,8 +14,8 @@ public class User {
     }
     public User (String name, String pass){
         this.name = name;
-        setPassword(pass);
         this.salt = PasswordUtils.generarSalt();
+        setPassword(pass);
     }
 
 
