@@ -54,6 +54,26 @@ public class SimpleCollectionTest {
 
         diesSetmana.addAll(diesFinde);
         assertTrue(diesSetmana.containsAll(diesFeiners));
+
+        List<String> diesSenars = new ArrayList<>();
+
+        diesSenars.addAll(diesSetmana);
+        assertTrue(diesSenars.contains("dimarts"));
+
+        diesSenars.remove(1);
+        assertFalse(diesSenars.contains("dimarts"));
+
+        diesSenars.remove("dijous");
+        assertFalse(diesSenars.contains("dijous"));
+
+        List<String> diesFeinersSenars = new ArrayList<String>();
+        diesFeinersSenars.addAll(diesSenars);
+
+        diesFeinersSenars.removeAll(diesFinde);
+        assertTrue(diesFeinersSenars.size() == 3);
+        assertFalse(diesFeinersSenars.contains("dissabte"));
+
+
     }
 
     public void initDiesFeiners (List<String> dies) {
