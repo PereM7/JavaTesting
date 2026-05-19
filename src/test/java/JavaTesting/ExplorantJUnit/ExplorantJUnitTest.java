@@ -1,7 +1,6 @@
 package JavaTesting.ExplorantJUnit;
 
-import org.junit.BeforeClass;
-import org.junit.Rule;
+import org.junit.*;
 import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
 
@@ -36,5 +35,23 @@ public class ExplorantJUnitTest {
         throw new IllegalArgumentException("the exception");
     }
 
+    @BeforeClass
+    public static void executaUnCopPerClasseAbansQualsevolTest() {
+        System.out.println("Abans d'executar qualsevol test, un cop per classe");
+    }
 
+    @AfterClass
+    public static void executaUnCopDespresDeQualsevolClasseTest() {
+        System.out.println("Després d'executar qualsevol test, un cop per classe.");
+    }
+
+    @Before
+    public void executaAbansCadaTest() {
+        System.out.println("Abans d'executar qualsevol test, un cop per test");
+    }
+
+    @After
+    public void executaDespresCadaTest() {
+        System.out.println("Després d'executar qualsevol test, un cop per test.");
+    }
 }
