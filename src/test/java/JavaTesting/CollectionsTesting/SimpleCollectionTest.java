@@ -73,6 +73,16 @@ public class SimpleCollectionTest {
         assertTrue(diesFeinersSenars.size() == 3);
         assertFalse(diesFeinersSenars.contains("dissabte"));
 
+        List<String> calculDies = new ArrayList<>();
+        calculDies.addAll(diesSetmana);
+
+        calculDies.clear();
+        assertTrue(calculDies.isEmpty());
+
+        calculDies.addAll(diesSetmana);
+        calculDies.removeAll(diesFinde);
+        assertEquals(5, calculDies.size());
+
 
     }
 
