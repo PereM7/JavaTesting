@@ -6,6 +6,14 @@ import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 
+import static javax.management.Query.not;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.hamcrest.core.IsNull.nullValue;
+import static org.hamcrest.core.StringContains.containsString;
+import static org.hamcrest.core.StringEndsWith.endsWith;
+import static org.hamcrest.core.StringStartsWith.startsWith;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ExplorantJUnitTest {
@@ -82,6 +90,24 @@ public class ExplorantJUnitTest {
 
         Object obj = null;
         assertSame(obj, null);
+
+    }
+
+
+    @Test
+    public void assertThatAmbHamcrest () {
+        assertThat("tastejant 4+5 = 9",(4+5), is(9));
+
+        assertThat("fals es fals", false, equalTo(false));
+
+        assertThat(false, is(false));
+
+        //assertThat("Un String buit no es Null", is(not(nullValue(""))));
+
+        assertThat("Això és un text", containsString("un"));
+        assertThat("Això és un text", endsWith("xt"));
+        assertThat("Això és un text", startsWith("Ai"));
+
 
     }
 }
